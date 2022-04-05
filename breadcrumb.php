@@ -31,3 +31,11 @@
   }		
   ?>
 </ul>
+<?php
+if(is_null($_GET['id']))
+{
+  header('Location: '."?id=0");
+} else {
+  $query = "SELECT * FROM [table] WHERE parent_id = ".$_GET['id']." ORDER BY name";
+}
+?>
